@@ -1,0 +1,733 @@
+/* ✅ توسيع غلاف الصورة ليحتوي زر تعديل خارج الهوفر */
+.profile-image-wrapper-container {
+  position: relative;  /* أضف هذا السطر */
+  box-sizing: border-box;
+  width: 200px;
+  height: 200px;
+  margin-inline-start: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* لتوسيط المحتوى عمودياً */
+}
+
+
+/* تعديل على select */
+.governorates-select {
+  width: 100%;
+  max-width: 160px;
+  background-color: #d5d8dc !important;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+   margin: 0 auto;
+}
+.profile-image-wrapper-container p{
+  margin-top: 15px;
+}
+/* ✅ غلاف الصورة */
+.profile-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+   z-index: 1;
+}
+.profile-image-wrapper img {
+  z-index: 1;
+  position: relative;
+}
+
+/* صورة الملف الشخصي */
+.profile-image-wrapper img,
+.profileImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+/* طبقة التعتيم عند الهوفر */
+.image-overlay {
+  position: absolute;
+  /*top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;*/
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   z-index: 2;
+}
+
+/* زر التحميل في المنتصف */
+.download-btn {
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 14px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease 0.1s, visibility 0.3s ease 0.1s;
+  white-space: nowrap;
+   pointer-events: auto;
+  position: relative;
+  width: auto;
+  z-index: 3;
+}
+
+.profile-image-wrapper:hover .image-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.profile-image-wrapper:hover .download-btn {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* زر تعديل خارج تأثير الهوفر */
+/*.edit-btn {
+  position: absolute;
+  top: -191px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: none;
+  border: none;
+  color: #ff7a00;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 3;
+}*/
+
+/* زر تعديل خارج تأثير الهوفر */
+.edit-btn {
+  position: absolute;
+  top: -30px;
+  left:0;
+  background: none;
+  border: none;
+  color: #ff7a00;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 5;
+}
+
+.download-btn:hover{
+  color: var(--secondColor);
+  
+}
+.verified {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  background: #FF94230D;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.verified img {
+  max-width: 60%;
+  max-height: 60%;
+}
+
+.profile-card {
+  background-color: #6B72800D;
+  border-radius: 12px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row-reverse;
+  direction: rtl;
+  align-items: flex-start;
+  padding: 30px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.editBtn {
+  background: none;
+  border: none;
+  color: #ff7a00;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: left;
+}
+.edit-btn:hover,
+.editBtn:hover {
+  color: #f47c20;
+}
+
+.profile-details {
+  flex: 1;
+  text-align: right;
+}
+
+.profile-name {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.profile-role {
+  margin: 4px 0;
+  font-size: 14px;
+  color: #777;
+}
+
+.profile-bio {
+  margin: 12px 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #6B7280;
+}
+
+.profile-location,
+.profile-email,.profile-phone {
+  font-size: 13px;
+  margin: 4px 0;
+  color: #555;
+}
+
+.details h3 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 22px;
+}
+
+.text-section {
+  font-size: 15px;
+  line-height: 1.25.6px;
+  color: #444;
+  text-align: justify;
+}
+
+.video {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #e0e0e0;
+}
+
+.video img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.play-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.workContent {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  gap: 20px;
+}
+
+.work-details {
+  background: #FF94230D;
+  padding: 40px;
+}
+
+.work-details span {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.work-details p {
+  font-size: 14px;
+  line-height: 22px;
+  color: #6B7280;
+}
+
+.work-details button {
+  padding: 8px 4px;
+  gap: 10px;
+  border-radius: 8px;
+  background: #FF9423;
+  color: white;
+  border: 1px solid #FF9423;
+  font-weight: 700;
+  font-size: 14px;
+}
+.work-details button:hover {
+background-color:#f7921e ;
+border-color: #f7921e ;
+}
+
+.Table {
+  background-color: #fdf4eb;
+  padding: 40px 0;
+  color: #333;
+  direction: rtl;
+}
+
+.appointment {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+.Table .edit {
+  color: #f47c20;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-block;
+ /* margin-left: auto;*/
+  /*float: left;*/
+  margin-bottom: 25px;
+  user-select: none;
+}
+
+.Table h2 {
+  font-weight: 600;
+  font-size: 22px;
+  margin: 0 0 10px 0;
+  clear: both;
+  text-align: center;
+}
+
+.Table .breadcrumbs {
+  font-size: 14px;
+  color: #999;
+  margin-bottom: 30px;
+}
+
+.Table .breadcrumbs span {
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.Table .breadcrumbs span.current {
+  color: #333;
+  font-weight: 600;
+  border-bottom: 2px solid #333;
+  padding-bottom: 2px;
+  cursor: default;
+}
+
+.Table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.Table table tbody tr {
+  border-bottom: 1px solid #eee;
+}
+
+.Table table tbody tr td {
+  padding: 15px 10px;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+.Table table tbody tr td:nth-child(1) {
+  width: 100px;
+  text-align: right;
+  color: #555;
+}
+
+.Table table tbody tr td:nth-child(2) {
+  width: 120px;
+  text-align: center;
+  color: #555;
+}
+
+.Table table tbody tr td:nth-child(3) {
+  /*width: 100px;
+  text-align: center;
+  font-weight: 600;*/
+  min-width: 180px;     /* أو أكثر حسب الحاجة */
+  text-align: center;
+  font-weight: 600;
+  white-space: nowrap;  /* يمنع كسر السطر */
+}
+
+.Table table tbody tr td.status-available {
+  color: #333;
+}
+
+.Table table tbody tr td.status-booked {
+  color: #f47c20;
+}
+
+.Table table tbody tr td:nth-child(4) {
+  width: 50px;
+  text-align: center;
+}
+
+.Table table tbody tr td img {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  user-select: none;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #222;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+  font-size: 14px;
+  color: #666;
+  font-weight: 700;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
+  outline: none;
+}
+
+input[type="date"]:focus,
+textarea:focus,
+input[type="time"]:focus {
+  box-shadow: 0 0 6px #ff8c1a;
+}
+
+textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.confirmReservationbtn {
+  width: 100%;
+  background-color: #ff8c1a;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 0;
+  font-weight: 600;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.confirmReservationbtn:hover{
+  background-color: #f47c20ce;
+}
+
+
+  .reviews-container {
+    /*max-width: 600px;*/
+    margin: 0 auto;
+    text-align: right;
+  }
+  .reviews-container h2 {
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+  .review {
+    display: flex;
+    justify-content: space-between; /* النجوم على اليسار، المحتوى على اليمين */
+    align-items: flex-start;
+    margin-bottom: 18px;
+  }
+  .stars {
+    color: #bbb;
+    font-size: 18px;
+    user-select: none;
+    min-width: 110px; /* لضمان وجود مساحة كافية على اليسار */
+    display: flex;
+    justify-content: flex-start; /* النجوم على أقصى اليسار */
+    gap: 6px;
+  }
+  .avatar-and-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    max-width: calc(100% - 120px); /* ترك مساحة للنجوم */
+  }
+  .avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    max-width: calc(100% - 60px);
+  }
+  .name {
+    font-weight: bold;
+    font-size: 15px;
+    color: #000;
+    margin-bottom: 4px;
+  }
+  .text {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #555;
+  }
+  .btn-show-all {
+    background-color: #f7941d;
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 30px;
+    display: block;
+    font-size: 16px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s ease;
+  }
+  .btn-show-all {
+    background-color: #e07e0b;
+  }
+  .btn__orange{
+    background-color: var(--secondColor);
+  }
+  .btn__orange:hover{
+   background-color: #e67e10;
+  }
+ /* أيقونة المستخدم عند غياب الصورة */
+.default-user-icon {
+  position: absolute;
+  /*font-size: 60px;*/
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  opacity: 0.6;
+}
+.main-color-profile{
+ color:var(--secondColor);
+}
+.profileImage {
+  font-size: 0;
+}
+.profile-picture-preview {
+  display: block;
+  margin: 0 auto 10px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+/* توحيد عرض الحقول داخل SweetAlert2 */
+/* تخصيص تنسيق التنبيه الخاص فقط */
+.custom-swal .profile-picture-preview {
+  display: block;
+  margin: 0 auto 10px;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.custom-swal .swal2-input,
+.custom-swal .swal2-textarea,
+.custom-swal .swal2-select {
+  width: 60% ;
+  box-sizing: border-box;
+  text-align: right;
+  direction: rtl;
+  margin-bottom: 10px;
+}
+.btn-work-section{
+background-color: var(--secondColor);
+}
+.btn-profile-section:hover{
+background-color:#f7921ecc ;
+}
+.show-details-btn {
+  background-color: white;
+  color: #f7921e;
+  border: 1px solid #f7921e;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+/* عند التمرير */
+.show-details-btn:hover {
+  background-color: #f7921e;
+  color: white;
+  transform: scale(1.02); 
+}
+
+/* عند الضغط أو التركيز */
+.show-details-btn:focus,
+.show-details-btn:active {
+  background-color: #e67e10;
+  color: white;
+  border-color: #e67e10;
+  box-shadow: none;
+  outline: none;
+}
+/*زر تعديل الموجود داخل معرض اعمال المهني*/
+
+.edit-work-btn {
+  background-color: transparent !important;
+  border: 2px solid #f7921e;
+  color: #f7921e !important;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  line-height: 1;
+}
+
+/* تأثير عند التمرير */
+.edit-work-btn:hover {
+  transform: scale(1.03);
+
+}
+
+.edit-work-btn:focus {
+  outline: none;
+ 
+}
+
+/* تأثير عند الضغط */
+.edit-work-btn:active {
+  transform: scale(0.96);
+  box-shadow: none;
+}
+
+/* زر حذف الموجود داخل معرض الاعمال للمهني*/
+.delete-work-btn {
+  background-color: transparent !important;
+  color: #e74c3c!important;
+  border: 2px solid #e74c3c;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  transform: scale(1);
+}
+
+/* عند التمرير */
+.delete-work-btn:hover {
+  transform: scale(1.015); 
+}
+
+/* عند الضغط */
+.delete-work-btn:active {
+  transform: scale(0.97); 
+}
+
+/* عند التركيز */
+.delete-work-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.btn.bg-body-secondary {
+  transition: transform 0.3s ease;
+}
+
+.btn.bg-body-secondary:hover {
+  transform: scale(1.08);
+  background-color: #333;
+}
+
+
+@media (max-width: 768px) {
+  .appointment {
+    padding: 0 10px;
+  }
+
+  .Table h2 {
+    font-size: 18px;
+  }
+
+  .Table .breadcrumbs {
+    font-size: 13px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .Table .editBtn {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .Table table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .Table table thead {
+    white-space: nowrap;
+  }
+
+  .Table table tbody tr td {
+    font-size: 14px;
+    padding: 10px 5px;
+  }
+}
+
+@media (max-width: 672px){
+  main{
+    margin-bottom: 200px;
+  }
+}

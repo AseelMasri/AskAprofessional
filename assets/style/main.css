@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+:root{
+  --mainfont:"Tajawal", sans-serif;
+  --mainColor:#FF9423;
+  --secondColor:#f7931e;
+
+}
+body {
+  font-family: var(--mainfont) !important;
+  }
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container {
+    width: calc(100% - 80px);
+    margin: auto;
+}
+a {
+ text-decoration: none;
+}
+ul {
+ list-style: none;
+}

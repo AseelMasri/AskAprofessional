@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إنشاء حساب</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="../assets/style/createAccount.css">
+  <link rel="stylesheet" href="../assets/style/main.css">
+</head>
+<body>
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 form-container d-flex flex-wrap">
+
+        <!-- الجانب الأيسر - الصورة -->
+        <div class="col-md-6 d-none d-md-flex align-items-center justify-content-center">
+          <img src="../assets/images/account.png" alt="انشاء حساب" class="img-fluid">
+        </div>
+
+        <!-- الجانب الأيمن - النموذج -->
+        <div class="col-md-6 p-4">
+          <h3 class="mb-3 text-center">إنشاء حساب</h3>
+          <p class="text-muted text-center">يرجى تسجيل بياناتك للمواصلة إلى حسابك.</p>
+
+          <form id="createForm" action="https://askprof-gojl.onrender.com/auth/register" method="POST" novalidate>
+            <!-- اسم المستخدم -->
+            <div class="mb-3 position-relative">
+              <input type="text" class="form-control px-5" id="username" name="username" placeholder="اسم المستخدم" required/>
+              <i class="fa-solid fa-user"></i> 
+            </div>
+
+            <!-- البريد الإلكتروني -->
+            <div class="mb-3 position-relative">
+              <input type="email" class="form-control px-5" id="email" name="email" placeholder="user@gmail.com" required/>
+              <i class="fa-solid fa-envelope"></i>
+            </div>
+
+            <!-- رقم الهاتف -->
+            <div class="mb-3 d-flex position-relative">
+              <input type="tel" class="form-control px-5" id="phone" name="phoneNumber" placeholder="رقم الهاتف" required/>
+              <i class="fa-solid fa-phone"></i>
+              <select class="form-select w-25 me-2" id="countryCode" name="countryCode">
+                <option selected>+970</option>
+                <option>+972</option>
+              </select>
+            </div>
+
+            <!-- كلمة المرور -->
+            <div class="mb-3 position-relative">
+              <input type="password" class="form-control pe-5" id="password" name="password" placeholder="كلمة المرور" required/>
+              <i class="fa-solid fa-eye-slash toggle-password" style="cursor:pointer;"></i>
+              <div class="invalid-feedback"></div>
+            </div>
+
+            <!-- تأكيد كلمة المرور -->
+            <div class="mb-3 position-relative">
+              <input type="password"  class="form-control pe-5" id="passwordConfirm" name="passwordConfirm" placeholder="تأكيد كلمة المرور" required/>
+              <i class="fa-solid fa-eye-slash toggle-password" style="cursor:pointer;"></i>
+              <div class="invalid-feedback"></div>
+            </div>
+
+            <!-- تاريخ الميلاد -->
+            <div class="mb-3">
+              <input type="date" class="form-control" id="birthDate" name="birthdate" value="2000-11-11" required/>
+            </div>
+
+            <!-- الجنس -->
+            <div class="mb-3">
+              <label class="form-label">الجنس:</label>
+              <div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input-radio" type="radio" name="gender" id="male" value="ذكر" checked required/>
+                  <label class="form-check-label">ذكر</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input-radio" type="radio" name="gender" id="female" value="أنثى" required/>
+                  <label class="form-check-label">أنثى</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- نوع المستخدم -->
+            <div class="mb-3">
+              <label class="form-label">نوع المستخدم:</label>
+              <div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input-radio" type="radio" name="usertype" id="user" value="مستخدم" checked required/>
+                  <label class="form-check-label">مستخدم</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input-radio" type="radio" name="usertype" id="professional" value="مهني" required/>
+                  <label class="form-check-label">مهني</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- المحافظة -->
+            <div class="mb-3">
+              <label class="form-label" for="originalGovernorate">المحافظة :</label>
+              <select class="form-select governorates-select" id="originalGovernorate" name="originalGovernorate" disabled >
+                <option selected disabled>اختر محافظتك</option>
+              </select>
+            </div>
+            <!-- القسم -->
+            <div class="mb-3">
+           <label class="form-label" for="department">المجال المهني :</label>
+           <select class="form-select" id="professionField" name="professionField" disabled>
+           <option selected disabled> اختر القسم</option>
+           <option value="التكنولوجيا">التكنولوجيا</option>
+           <option value="الكهربائيات"> الكهربائيات</option>
+           <option value="ورشات البناء">ورشات البناء</option>
+            </select>
+           </div>
+           
+
+            <!-- زر إنشاء الحساب -->
+            <div class="d-grid mb-2">
+              <button type="submit" class="btn main__bgcolor">إنشاء</button>
+            </div>
+
+            <!-- أو تسجيل الدخول باستخدام Google -->
+             <!--
+            <div class="text-center mb-2">أو</div>
+            <div class="d-grid mb-3">
+              <button type="button" class="btn btn-outline-dark">
+                <img src="../assets/images/googleIcon.png" alt="googleIcon" class="px-1" />
+                تسجيل الدخول باستخدام Google
+              </button>
+            </div>
+            -->
+
+            <!-- رابط تسجيل الدخول -->
+            <div class="text-center">
+              لديك حساب بالفعل؟ <a class="a-login" href="../pages/login.html">قم بتسجيل الدخول</a>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- مكتبات JavaScript -->
+   
+   <!--bootstrap js-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <!--axios js-->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!--sweetalert2 js-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!--createAccount js-->
+  <script src="../assets/js/createAccount.js"></script>
+</body>
+</html>

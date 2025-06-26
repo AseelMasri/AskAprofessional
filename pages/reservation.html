@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>إدارة الحجوزات</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="../assets/style/main.css" />
+  <link rel="stylesheet" href="../assets/style/style.css" />
+  <link rel="stylesheet" href="../assets/style/reservation.css" />
+</head>
+
+<body>
+   <header class="p-2">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid d-flex flex-row-reverse justify-content-between align-items-center">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div class="collapse navbar-collapse justify-content-between align-items-center" id="navbarContent">
+
+  <!-- روابط المنتصف -->
+  <div class="mx-auto">
+    <ul class="links navbar-nav gap-4 flex-row-reverse align-items-center">
+      <li class="nav-item"><a class="nav-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=aseelshaherjumaa2003@gmail.com&su=استفسار&body=مرحبا، أود الاستفسار عن..." target="_blank">تواصل معنا</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../pages/professional.html">المهنيين</a>
+      </li>
+      <!--<li class="nav-item">
+        <a class="nav-link" href="#">الخدمات</a>
+      </li>
+    -->
+      <li class="nav-item">
+        <a class="nav-link" href="../index.html">الرئيسية</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- أزرار تسجيل الدخول -->
+   <!--
+  <div class="auth d-flex flex-row-reverse gap-2">
+    <a class="btn login" href="../pages/login.html">تسجيل الدخول</a>
+    <a class="btn register" href="../pages/createAccount.html">إنشاء حساب</a>
+  </div>
+  -->
+  <div class="auth d-flex flex-row-reverse gap-2">
+  <!-- زر "إنشاء حساب" يظهر دائمًا -->
+  <a class="btn register" href="../pages/createAccount.html">إنشاء حساب</a>
+
+  <!-- زر "تسجيل الدخول" الذي يتحول إلى Dropdown إذا المستخدم مسجل -->
+  <div class="dropdown">
+    <button id="loginBtn" class="btn login" type="button">تسجيل الدخول</button>
+    <ul id="loginDropdownMenu" class="dropdown-menu text-end dropdown-menu-end d-none">
+      <li><a id="logoutLink" class="dropdown-item text-danger" href="#">تسجيل الخروج</a></li>
+    </ul>
+  </div>
+</div>
+</div>
+
+
+          <div class="d-flex align-items-center gap-2">
+              <a id="profileLink" href="#" class="text-dark d-none">
+           <i class="fa-regular fa-circle-user"></i>
+           </a>
+           <span class="navbar-brand fw-bold brand-name">إسأل مهني</span>
+         
+           
+         </div>
+
+
+        </div>
+        
+      </nav>
+    </div>
+  </header>
+  <main>
+    
+    <section class="mb-5">
+      <div class="container">
+        <h2 class="fw-bold fs-4 mb-3">إدارة الحجوزات</h2>
+        <div class="breadcrumbs mb-4">
+          <a href="#">الحجوزات النشطة</a>
+          <span class="mx-2">-</span>
+          <a href="#">الحجوزات المحذوفة</a>
+        </div>
+
+        <div  class="mb-5">
+          <h3 class="fw-bold mb-4 fs-5">الحجوزات النشطة</h3>
+          <div id="activeBookingsContainer" class="d-flex flex-wrap gap-4 justify-content-center">
+           <!-- <div class="booking-card"> -->
+           
+          </div>
+        </div>
+        <div class="mb-5">
+  <h3 class="fw-bold mb-4 fs-5">الحجوزات المحذوفة</h3>
+  <div id="cancelledBookingsContainer" class="d-flex flex-column gap-3">
+    <!-- الحجوزات المحذوفة تظهر هنا -->
+  </div>
+</div>
+       
+        
+      </div>
+    </section>
+    <div class="d-flex justify-content-center align-items-center mt-3">
+  <a id="goToProfessionalsBtn" class="btn text-white px-2 py-1 btn-sm rounded details-btn d-none" href="../pages/professional.html">الانتقال الى المهنيين</a>
+   </div>
+
+  </main>
+  <footer class="custom-footer text-white mt-5">
+    <div class="container py-5">
+      <div class="row align-items-center">
+        <!-- الصورة -->
+        <div class="col-md-5 text-center">
+          <div class="img-circle-wrapper mx-auto">
+            <img src="../assets/images/footer.png" alt="صورة مهني"
+              class="img-fluid rounded-circle border border-4 border-white">
+          </div>
+        </div>
+
+        <!-- النص -->
+        <div class="col-md-7 text-left">
+          <h5>اسأل مهني</h5>
+          <p>
+            "اسأل مهني" هو موقع متخصص يقدم خدمات استشارية احترافية في مختلف المجالات. سواء كنت بحاجة إلى استشارات
+            قانونية، مالية، أو تقنية، فريقنا من الخبراء جاهز لمساعدتك في اتخاذ القرارات الصحيحة. تواصل معنا اليوم للحصول
+            على الدعم الذي تحتاجه.
+          </p>
+          <p>
+            هل تحتاج إلى استشارة متخصصة في مجال معين؟ فريقنا من الخبراء المؤهلين جاهز لتقديم الدعم والاستشارات التي
+            تحتاجها.
+          </p>
+          <a href="./professional.html" class="btn btn-outline-light rounded-pill px-4 mx-auto d-table">احجز موعد الآن</a>
+
+          <div class="social-icons mt-4 d-flex gap-2 justify-content-center">
+            <a href="#" class="btn btn-outline-light rounded-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="btn btn-outline-light rounded-2"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="btn btn-outline-light rounded-2"><i class="fab fa-twitter"></i></a>
+          </div>
+          <p class="mt-5 small text-center">&copy; 2025 جميع الحقوق محفوظة لدى <br> اسأل مهني</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- مكتبة Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+    crossorigin="anonymous"></script>
+
+    <!-- axios CDN -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<!-- SweetAlert2 CDN -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+<!-- سكربت الحجوزات -->
+ <script src="../assets/js/tokenUtils.js"></script>
+<script src="../assets/js/reservation.js"></script>
+<script src="../assets/js/logout.js"></script>
+
+</body>
+
+</html>

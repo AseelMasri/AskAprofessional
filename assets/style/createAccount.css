@@ -1,0 +1,73 @@
+.form-container {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  .main__bgcolor{
+    background-color: var(--mainColor);
+  }
+  
+  .form-control::placeholder {
+    text-align: right;
+  }
+  .toggle-password, .fa-envelope, .fa-phone, .fa-user  {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 15px;
+    cursor: pointer;
+    color: #aaa;
+  }
+
+  input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--mainColor);
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  input[type="radio"]:checked::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 8px;
+    height: 8px;
+    background-color: var(--mainColor); 
+    border-radius: 50%;
+    
+  }
+  
+  .form-check-input-radio:checked {
+    background-color: transparent;
+    border-color: var(--mainColor);
+  }
+  .btn:hover{
+    background-color:var(--secondColor);
+}
+
+
+/*--login--*/
+.form-check-input:checked {
+  background-color: orange;
+  /* border-color: #0d6efd; */
+  /* color: aqua; */
+}
+
+input.form-control.is-invalid {
+  background-position: left calc(0.375em + 0.1875rem) center !important;
+  padding-left: 2.5rem; /* مساحة لظهور الأيقونة على اليسار */
+  padding-right: 0.75rem; /* لتقليل المسافة من اليمين */
+}
+input.form-control.is-valid {
+  background-position: left calc(0.375em + 0.1875rem) center !important;
+  padding-left: 2.5rem; /* مساحة لظهور الأيقونة على اليسار */
+  padding-right: 0.75rem; /* لتقليل المسافة من اليمين */
+}

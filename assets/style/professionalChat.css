@@ -1,0 +1,82 @@
+/*  الحاوية الأساسية */
+.chat-container {
+  background-color: #fff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/*  منطقة الرسائل مع scroll دائم */
+.chat-messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: calc(100vh - 180px); /* اضبط الرقم حسب ارتفاع الهيدر والفوتر */
+  padding: 1rem;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+}
+
+/*  فقاعة رسالة العميل (OP) */
+.chat-messages .border {
+  border: 1px solid var(--mainColor);
+  color: var(--mainColor);
+  background-color: #fff;
+}
+
+/*  فقاعة رسالة المهني */
+.chat-messages .bg-warning {
+  background-color: var(--mainColor) !important;
+  color: white;
+}
+
+/*  الصورة الرمزية */
+.contact-img {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/*  الفوتر - إدخال الرسالة */
+footer input.form-control {
+  font-size: 14px;
+  background-color: #fff;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+footer input::placeholder {
+  color: #aaa;
+  font-size: 13px;
+}
+
+/*  زر الميكروفون */
+.input-group-text {
+  background-color: var(--mainColor);
+  color: white;
+  font-size: 16px;
+  padding: 0.5rem 1rem;
+  border: none;
+}
+
+/*  البادج للعميل */
+.bg-warning-subtle {
+  background-color: rgba(255, 148, 35, 0.1);
+}
+
+.text-warning-emphasis {
+  color: var(--mainColor);
+}
+
+/*  فقاعة رسالة المهني */
+.professional-message {
+  max-width: 300px;
+  font-size: 14px;
+  background-color: var(--mainColor);
+  color: white;
+  border-radius: 12px;
+  padding: 10px 14px;
+  text-align: start;
+  margin-bottom: 0.5rem;
+}
+

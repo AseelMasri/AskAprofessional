@@ -1,0 +1,183 @@
+.links li:hover {
+  text-decoration: underline var(--mainColor);
+  text-underline-offset: 4px;
+}
+.auth .login,.auth .register{
+    background: #FF942333;
+    color: var(--mainColor);
+    border-radius:8px;
+    padding: 7px 8px;
+}
+.auth .register:hover {
+    background: var(--mainColor);
+    color: white;
+    transition: 0.3s ease;
+}
+
+.auth .login:hover {
+    background: var(--mainColor);
+    color: white;
+    transition: 0.3s ease;
+}
+.breadcrumb {
+    background-color: transparent;
+    padding: 0;
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: #888;
+    /*border-bottom: 1px solid #eee;*/
+    direction: ltr; /*  هاي مهمة */
+    unicode-bidi: isolate;
+  }
+  
+  .breadcrumb-item + .breadcrumb-item::before {
+    content: "/";
+    padding: 0 0.5rem;
+    color: #ccc;
+
+  }
+  
+  .breadcrumb a {
+    color: #888;
+    text-decoration: none;
+  }
+  
+  .breadcrumb-item.active {
+    color: #000;
+    font-weight: 600;
+  }
+  .text__font{
+    /*font-size: 0.85rem ;*/
+    font-size:12px;
+  }
+  .search-icon-inside {
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #888;
+    pointer-events:none;
+  }
+  .btn__main{
+    background-color: var(--mainColor);
+    color: white;
+  }
+  .btn__main:hover {
+        background-color: #e57c1e; /* درجة أغمق عند التحويم */
+        color: white;
+    }
+
+  .select-wrapper {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .select-wrapper select.custom-select {
+    background-color: #f8f8f8;
+    padding-right: 2.2rem; /* مساحة للأيقونة */
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    color: #333;
+    box-shadow: none;
+    appearance: none;
+  }
+  
+  .select-wrapper i.icon-inside {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    color: #999;
+    pointer-events: none;
+  }
+  select.custom-select {
+    appearance: none;         /* لأنظمة macOS و Linux */
+    -webkit-appearance: none; /* Safari/Chrome */
+    -moz-appearance: none;    /* Firefox */
+    background-image: none;   /* احتياطاً */
+  }
+  .btn-reset{
+    background-color:#ccc;
+    color:#000;
+  }
+  .btn-reset:hover{
+    background-color:#ccccccc2;
+    color:#000;
+  }
+  /* عرض البطاقات*/
+
+  .view-switcher .view-option {
+    color: #6c757d; /* رمادي ناعم */
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+  
+  .view-switcher .view-option.active {
+    font-weight: 600;
+    text-decoration: underline;
+  }
+  
+  .view-switcher .view-option:hover {
+    text-decoration: underline;
+    color: #000;
+  }
+  /*البطاقات*/
+  .prof-card {
+    background-color: #fff5eb;
+  }
+  
+  .prof-card .btn-outline-warning {
+    border: none;
+  }
+  
+  .prof-card .btn-warning {
+    background-color: var(--mainColor);
+    border: none;
+  }
+  
+  .prof-card .btn-sm {
+    padding: 4px 12px;
+    font-size: 0.85rem;
+    border-radius: 8px;
+  }
+  /*باتون عرض المزيد*/
+  .btn-main {
+    background-color: var(--mainColor);
+    color: white;
+    border-radius: 8px;
+    font-size: 14px;
+    padding: 6px 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-main:hover {
+    background-color: #e6821f; /* لون أغمق عند التمرير */
+    color: white;
+  }
+
+  @media (max-width: 768px) {
+  .accordion-button {
+    font-size: 14px; 
+    padding: 12px; 
+  }
+.faq-section {
+    height: auto; 
+    border-radius: 30px; 
+    padding: 10px;
+  }
+  .accordion {
+    padding: 10px; 
+  }  
+}
+  @media (max-width: 764px) {
+  main{
+    margin-bottom: 200px;
+  }
+  }
+@media (max-width: 426px) {
+  .img-circle-wrapper {
+    width: 200px;
+    height: 200px;
+    margin-top: -100px;
+  }
+}

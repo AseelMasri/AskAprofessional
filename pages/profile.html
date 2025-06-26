@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الملف الشخصي</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../assets/style/main.css" />
+    <link rel="stylesheet" href="../assets/style/style.css"> 
+    <link rel="stylesheet" href="../assets/style/profile.css"> 
+</head>
+<body>
+ <header class="p-2">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid d-flex flex-row-reverse justify-content-between align-items-center">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div class="collapse navbar-collapse justify-content-between align-items-center" id="navbarContent">
+
+  <!-- روابط المنتصف -->
+  <div class="mx-auto">
+    <ul class="links navbar-nav gap-4 flex-row-reverse align-items-center">
+      <li class="nav-item"><a class="nav-link" href="https://mail.google.com/mail/?view=cm&fs=1&to=aseelshaherjumaa2003@gmail.com&su=استفسار&body=مرحبا، أود الاستفسار عن..." target="_blank">تواصل معنا</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../pages/professional.html">المهنيين</a>
+      </li>
+      <!--<li class="nav-item">
+        <a class="nav-link" href="#">الخدمات</a>
+      </li>
+    -->
+      <li class="nav-item">
+        <a class="nav-link" href="../index.html">الرئيسية</a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- أزرار تسجيل الدخول -->
+   <!-- 
+  <div class="auth d-flex flex-row-reverse gap-2">
+    <a class="btn login" href="../pages/login.html">تسجيل الدخول</a>
+    <a class="btn register" href="../pages/createAccount.html">إنشاء حساب</a>
+  </div>
+  -->
+  <div class="auth d-flex flex-row-reverse gap-2">
+  <!-- زر "إنشاء حساب" يظهر دائمًا -->
+  <a class="btn register" href="../pages/createAccount.html">إنشاء حساب</a>
+
+  <!-- زر "تسجيل الدخول" الذي يتحول إلى Dropdown إذا المستخدم مسجل -->
+  <div class="dropdown">
+    <button id="loginBtn" class="btn login" type="button">تسجيل الدخول</button>
+    <ul id="loginDropdownMenu" class="dropdown-menu text-end dropdown-menu-end d-none">
+      <li><a id="logoutLink" class="dropdown-item text-danger" href="#">تسجيل الخروج</a></li>
+    </ul>
+  </div>
+</div>
+
+</div>
+
+
+          <div class="d-flex align-items-center gap-2">
+              <a id="profileLink" href="#" class="text-dark d-none">
+           <i class="fa-regular fa-circle-user"></i>
+           </a>
+           <span class="navbar-brand fw-bold brand-name">إسأل مهني</span>
+         
+           
+         </div>
+
+
+        </div>
+        
+      </nav>
+    </div>
+  </header>
+<main>
+  <!--
+  <section class="profile-section mt-5">
+     <div class="container">
+ <div class="mb-4">
+  <p class="text-center">عدل محافظتك (إن ترغب)</p>
+  <div class="d-flex justify-content-center">
+    <select id="governorateSelect" class="form-select w-auto text-center" aria-label="اختر خياراً">
+      <option selected disabled>اختر المحافظة</option>
+    </select>
+  </div>
+</div>
+  </section>
+-->
+  
+  <!--بروفايل-->
+    <section class="profile-section mt-5">
+    <div class="container">
+      <div class="profile-card">
+
+        
+        <div class="profile-image-wrapper-container">
+          <button type="button" class="edit-btn d-none" id="edit-btn">تعديل</button>
+         <!-- الصورة -->
+          <div class="profile-image-wrapper">
+            <div class="image-overlay">
+              <button  id="uploadImageBtn" class="download-btn">تحميل صورة</button>
+            
+            </div>
+            <!-- ✅ الأيقونة البديلة -->
+             <i id="defaultUserIcon" class="fa-solid fa-user fa-5x main-color-profile default-user-icon d-none"></i>
+             
+            <img id="profileImage" class="profileImage" width="150" height="150"   />
+           <input type="file" id="imageUpload" accept="image/*" style="display: none;" />
+            
+          </div>
+        </div>
+
+
+        <div class="profile-details">
+          <div class="d-flex align-items-center gap-2">
+            <div class="verified">
+              <img src="../assets/images/verified.svg" />
+            </div>
+            <h2 class="profile-name"></h2>
+          </div>
+          <p class="profile-role"></p>
+          <p class="profile-bio"></p>
+          <p class="profile-location"></p>
+          <p class="profile-email"></p>
+          <p class="profile-phone"></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- قسم النبذة -->
+    <section class="mt-5">
+   <div class="container">
+    <div class="details">
+      <div class="d-flex justify-content-between align-items-center align-content-center flex-wrap">
+      <h3>نبذة عن المهني</h3>
+      <button type="button" class="editBtn d-none" id="editDescriptionBtn">تعديل</button>
+    </div>
+      <p class="text-section mt-3" id="about-professional"></p>
+    </div>
+   </div>
+    </section>
+   <section class="mt-5">
+  <div class="container">
+    <div class="video position-relative">
+      <!-- صورة الغلاف -->
+      <img id="videoThumbnail" src="../assets/images/professional.png" class="d-none w-100" />
+
+      <!-- زر التشغيل -->
+      <div class="play-button d-none" aria-label="تشغيل الفيديو" role="button" tabindex="0"
+           style="position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); cursor:pointer;">
+        <img src="../assets/images/playbutton.svg" width="60" />
+      </div>
+
+      <!-- مشغل الفيديو -->
+      <video id="introVideo" controls class="w-100 mt-3" style="display: none;">
+        <source id="videoSource" src="" type="video/mp4" />
+        متصفحك لا يدعم تشغيل الفيديو.
+      </video>
+
+      
+      <!--زر رفع الفيديو -->
+<div id="videoUploadSection" class="mt-3 d-none">
+  <label for="videoUpload" class="form-label">ارفع فيديو تعريفي جديد (مدة لا تتجاوز 30 ثانية)</label>
+  <input type="file" id="videoUpload" accept="video/*" class="form-control mb-2" />
+  <button id="uploadVideoBtn" class="btn btn-primary px-2">رفع الفيديو</button>
+</div>
+<button id="deleteVideoBtn" class="btn btn-danger mt-2 px-1 d-none">حذف الفيديو</button>
+
+  </div>
+  </div>
+</section>
+
+    <section class="mt-5">
+      <div class="container">
+       
+        <div class="d-flex justify-content-between align-items-center align-content-center flex-wrap">
+          <h3>معرض الأعمال </h3>
+          <!--<button type="button" class="btn editBtn work-edit-btn">تعديل</button> -->
+          <button type="button" class="btn editBtn add-work-btn ">إضافة عمل</button>
+        </div>  
+         <div class="workContent d-flex flex-wrap gap-3 mt-4">
+      <!-- العناصر ستتم إضافتها هنا تلقائياً -->
+    </div>
+      </div>
+    </section>
+<section class="mt-5">
+  <div class="container">
+    <div class="reviews-container">
+      <h2>التقييمات والمراجعات</h2>
+      <button id="add-review-btn" class="btn editBtn mb-3">إضافة رأي</button>
+
+      <!-- ✅ هنا سيتم إدخال التقييمات ديناميكياً -->
+      <div id="reviews-list" class="d-flex flex-column gap-3 mt-3"></div>
+      
+
+
+      <!-- ✅ زر عرض المزيد يظهر فقط عند الحاجة -->
+      <button id="btn-show-all" class="btn btn__orange  mt-3 d-none">عرض جميع التقييمات</button>
+    </div>
+  </div>
+</section>
+
+<section class="mt-5 Table">
+  <div class="container appointment">
+    <button type="button" class="editBtn table-edit-btn">اضافة</button>
+    <h2>جدول المواعيد المتاحة</h2>
+    <div class="breadcrumbs mb-3">
+      <span class="current">الأسبوع الحالي</span>
+      <span>الأسبوع القادم</span>
+      <span>كل الأسابيع</span>
+    </div>
+    <table class="table text-center">
+      <thead class="table-light">
+     <tr>
+    <th>التاريخ</th>
+    <th>اليوم</th>
+    <th>الوقت</th>
+    <th>الحالة</th>
+    <th>الحجز</th>
+    <th>حذف</th>
+    </tr>
+   </thead>
+
+      <tbody></tbody>
+    </table>
+  </div>
+</section>
+
+<section id="booking-section" class="mt-5 Table">
+  <div class="container appointment">
+    <h2 class="fs-4 lh-sm text-end">حجز موعد استشارة</h2>
+    <form id="bookingForm">
+      <div class="mb-2">
+        <label for="date">التاريخ</label>
+        <input type="date" id="date" class="form-control" required />
+      </div>
+
+      <div class="mb-2">
+        <label for="time">الوقت</label>
+        <select id="time" class="form-control" required>
+          <option selected disabled>اختر الوقت</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="subject">موضوع الاستشارة</label>
+        <textarea id="subject" class="form-control" placeholder="اكتب موضوع الحجز" required></textarea>
+      </div>
+
+      <button type="submit" class="confirmReservationbtn">تأكيد الحجز</button>
+    </form>
+  </div>
+</section>
+
+</main>
+
+
+<footer class="custom-footer text-white ">
+  <div class="container py-5">
+    <div class="row align-items-center">
+      <!-- الصورة -->
+      <div class="col-md-5 text-center">
+        <div class="img-circle-wrapper mx-auto">
+          <img src="../assets/images/footer.png" alt="صورة مهني" class="img-fluid rounded-circle border border-4 border-white">
+        </div>
+      </div>
+
+      <!-- النص -->
+      <div class="col-md-7 text-left">
+        <h5>اسأل مهني</h5>
+        <p>
+          "اسأل مهني" هو موقع متخصص يقدم خدمات استشارية احترافية في مختلف المجالات. سواء كنت بحاجة إلى استشارات قانونية، مالية، أو تقنية، فريقنا من الخبراء جاهز لمساعدتك في اتخاذ القرارات الصحيحة. تواصل معنا اليوم للحصول على الدعم الذي تحتاجه.
+        </p>
+        <p>
+          هل تحتاج إلى استشارة متخصصة في مجال معين؟ فريقنا من الخبراء المؤهلين جاهز لتقديم الدعم والاستشارات التي تحتاجها.
+        </p>
+        <a href="./professional.html" class="btn btn-outline-light rounded-pill px-4 mx-auto d-table">احجز موعد الآن</a>
+
+        <div class="social-icons mt-4 d-flex gap-2 justify-content-center">
+          <a href="#" class="btn btn-outline-light rounded-2"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="btn btn-outline-light rounded-2"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="btn btn-outline-light rounded-2"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p class="mt-5 small text-center">&copy; 2025 جميع الحقوق محفوظة لدى <br> اسأل مهني</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <!-- مكتبة Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+  <!--axios lib-->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!--custom script-->
+  <script src="../assets/js/tokenUtils.js"></script>
+  <script src="../assets/js/profile.js"></script>
+  <!--custom work professional -->
+  <script src="../assets/js/workProfessional.js"></script>
+  <!--custom Reviews professional -->
+  <script src="../assets/js/professionalReviews.js"></script>
+  <!-- custom workingHours -->
+   <script src="../assets/js/workingHours.js"></script>
+   <!-- createReseration -->
+    <script src="../assets/js/createReservation.js"></script>
+    
+    <script src="../assets/js/logout.js"></script>
+  </body>
+
+</html>

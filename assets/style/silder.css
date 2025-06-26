@@ -1,0 +1,25 @@
+.swiper {
+    padding-bottom: 50px;
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    height: auto !important;
+  }
+
+  .service-card {
+    height: 100%;
+  }
+  .swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--mainColor);
+  z-index: 10;
+}
+.swiper-pagination-bullet-active{
+    background-color: var(--mainColor);
+}
+  
